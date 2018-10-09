@@ -1,0 +1,139 @@
+.header
+    background: gainsboro
+
+    .block-filter-left
+        display: flex
+        flex-direction: column
+        background-color: white
+        padding: 10px 10px 20px 10px
+        margin-top: 16px
+
+        .title
+            font-size: 18px
+
+        .container-checkboxes-filters
+            margin-top: 30px
+
+            .checkbox input
+                position: absolute
+                z-index: -1
+                opacity: 0
+                margin: 10px 0 0 20px
+
+
+            .checkbox__text
+                position: relative
+                padding: 0 0 0 60px
+                cursor: pointer
+
+
+            .checkbox__text:before
+                content: ''
+                position: absolute
+                top: -4px
+                left: 0
+                width: 50px
+                height: 26px
+                border-radius: 13px
+                background: #CDD1DA
+                box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2)
+                transition: .2s
+
+
+            .checkbox__text:after
+                content: ''
+                position: absolute
+                top: -2px
+                left: 2px
+                width: 22px
+                height: 22px
+                border-radius: 10px
+                background: #FFF
+                box-shadow: 0 2px 5px rgba(0, 0, 0, .3)
+                transition: .2s
+
+
+            .checkbox input:checked + .checkbox__text:before
+                background: #007bff
+
+
+            .checkbox input:checked + .checkbox__text:after
+                left: 26px
+
+
+            .checkbox input:focus + .checkbox__text:before
+                box-shadow: inset 0 2px 3px rgba(0, 0, 0, .2), 0 0 0 3px rgba(89, 138, 212, 1)
+
+
+    .custom-ticket
+        display: flex
+        justify-content: space-between
+
+        background: #fff
+        box-shadow: #CDD1DA 0 2px 5px
+        margin: 15px
+
+        padding: 15px
+
+        > div
+            margin: 0 10px
+
+        .company
+            .btn
+                margin-top: 20px
+                padding: 20px 10px
+                border-radius: 10px
+
+        .departure-time
+            font-size: 24px
+            font-weight: bold
+
+        .arrival-time
+            font-size: 24px
+            font-weight: bold
+
+        .stops
+            p
+                border-bottom: 3px solid #007bff
+
+
+@media screen and (max-width: 992px)
+    .header
+        .custom-ticket
+            flex-direction: column
+            justify-content: center
+            text-align: center
+            margin-right: 50px
+            .departure
+                margin-top: 20px
+            .stops
+                margin-top: 20px
+
+
+@media screen and (max-width: 771px)
+    .header
+        .block-filter-left
+            margin: 15px 65px
+        .custom-ticket
+            margin: 15px 65px
+
+@media screen and (max-width: 539px)
+    .header
+        .custom-ticket
+    margin: 15px 0
+
+    > div
+        margin: 10px 0
+
+@media screen and (max-width: 415px)
+    .header
+        .block-filter-left
+            margin: 15px 50px 15px 15px
+        .custom-ticket
+            margin: 15px 50px 15px 15px
+
+
+a, a:hover, a:active, a:link
+    text-decoration: none !important
+    color: white !important
+
